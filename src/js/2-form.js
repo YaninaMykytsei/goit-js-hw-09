@@ -8,7 +8,8 @@ const formData = {
 
 const savedData = JSON.parse(localStorage.getItem(localStorageKey));
 if (savedData) {
-  formData = savedData;
+  formData.email = savedData.email || '';
+  formData.message = savedData.message || '';
   form.elements.email.value = savedData.email || '';
   form.elements.message.value = savedData.message || '';
 }
